@@ -9,7 +9,7 @@ const initTerminal = () => {
 
   const LINES = [
     { type: 'cmd',    text: 'whoami' },
-    { type: 'out',    text: 'audio engineer · front-end developer' },
+    { type: 'out',    text: 'software developer · audio engineer' },
     { type: 'cmd',    text: 'ls ./skills' },
     { type: 'out',    text: 'HTML · CSS · JavaScript\n · Git · VS Code\n · AI-assisted workflows' },
     { type: 'cmd',    text: 'cat about.txt' },
