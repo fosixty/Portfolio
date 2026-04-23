@@ -129,11 +129,15 @@
   justify-content: center;
   gap: 40px;
   opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   transition: opacity var(--transition-med);
 }
 
 .nav__mobile-overlay.open {
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .nav__mobile-overlay ul {

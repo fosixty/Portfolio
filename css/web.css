@@ -172,6 +172,7 @@ main { padding-top: 60px; }
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  touch-action: manipulation;
 }
 
 .dev-card__link:hover,

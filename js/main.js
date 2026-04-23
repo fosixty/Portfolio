@@ -28,7 +28,6 @@ const initMobileNav = () => {
   if (!btn || !overlay) return;
 
   const open = () => {
-    overlay.style.display = 'flex';
     requestAnimationFrame(() => overlay.classList.add('open'));
     btn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
@@ -38,9 +37,6 @@ const initMobileNav = () => {
     overlay.classList.remove('open');
     btn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
-    overlay.addEventListener('transitionend', () => {
-      if (!overlay.classList.contains('open')) overlay.style.display = 'none';
-    }, { once: true });
   };
 
   btn.addEventListener('click', () => {
