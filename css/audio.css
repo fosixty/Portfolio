@@ -442,7 +442,7 @@ main { padding-top: 60px; }
     height: 32px;
     flex: 0 0 32px;
     margin-bottom: 0;
-    margin-right: 60px;
+    margin-right: 0;
   }
   @keyframes signal-travel {
     0%   { top: -100%; left: 0; }
