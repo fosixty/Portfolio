@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Audio engineering work by Mitchell Gendron — vocal engineering, recording, mixing, mastering, beat production, and full production from Marietta, GA and remote." />
+  <title>Audio Engineering — Mitchell Gendron</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/fx.css" />
+  <link rel="stylesheet" href="css/motion.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/audio.css" />
+</head>
+<body class="scanlines">
+
+  <!-- =============================================
+       NAVIGATION
+  ============================================== -->
+  <header>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html" class="nav__brand" aria-label="Home">
+        <span class="nav__brand-name">Mitchell Gendron</span>
+        <span class="status-dot" aria-hidden="true"></span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="web.html">Dev</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav__cta">
+        <a href="index.html#contact" class="btn" aria-label="Contact me">[ Contact ]</a>
+      </div>
+
+      <button
+        class="nav__hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </nav>
+
+    <nav class="nav__mobile-overlay" id="mobile-nav" aria-label="Mobile navigation">
+      <ul role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="web.html">Dev</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn">[ Contact ]</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =============================================
+         PAGE HERO
+    ============================================== -->
+    <section class="audio-hero" aria-label="Audio Engineering page hero">
+      <div class="audio-hero__title-block">
+        <div class="hud-header reveal reveal--up">
+          <span class="hud-header__label">// 01 — Discipline</span>
+          <h1 class="hud-header__title glow-text" style="font-size: clamp(2.2rem, 6vw, 4.5rem);">AUDIO<br />ENGINEERING</h1>
+        </div>
+        <p class="audio-hero__subtitle reveal reveal--up">
+          Vocal Engineering · Recording · Mixing · Mastering · Beat Production · Full Production
+        </p>
+        <p class="reveal reveal--up" style="font-size:0.85rem;color:var(--text-muted);font-family:var(--font-mono);line-height:1.8;">
+          Based in Marietta, GA and available for remote or in-studio work.<br />
+          Artist-focused, performance-driven, and especially dialed in on vocal sessions.
+        </p>
+      </div>
+
+      <!-- Frequency spectrum visualization -->
+      <div class="audio-hero__spectrum" aria-hidden="true" id="spectrum" role="presentation"></div>
+    </section>
+
+    <!-- =============================================
+         FILTER BAR
+    ============================================== -->
+    <div class="filter-bar" role="toolbar" aria-label="Filter projects by category">
+      <span class="filter-bar__label">Filter:</span>
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="recording" aria-pressed="false">Recording</button>
+      <button class="filter-btn" data-filter="mixing" aria-pressed="false">Mixing</button>
+      <button class="filter-btn" data-filter="mastering" aria-pressed="false">Mastering</button>
+      <button class="filter-btn" data-filter="beat-production" aria-pressed="false">Beat Production</button>
+      <button class="filter-btn" data-filter="full-production" aria-pressed="false">Full Production</button>
+    </div>
+
+    <!-- =============================================
+         PROJECT GRID
+    ============================================== -->
+    <section class="project-section" aria-labelledby="projects-heading">
+      <div class="hud-header reveal reveal--up">
+        <span class="hud-header__label">// 02 — Catalogue</span>
+        <h2 class="hud-header__title" id="projects-heading" style="font-size: clamp(1.6rem, 4vw, 2.6rem);">PROJECT LOG</h2>
+      </div>
+
+      <div class="project-grid stagger" data-stagger-step="60" id="project-grid" aria-label="Projects">
+
+        <article class="project-card bracket-corner reveal reveal--up" data-category="mixing" aria-label="Project: Bedroom Floor — tracking, mixing, mastering">
+          <div class="project-card__top-row">
+            <span class="project-card__title-mono">Tracking / Mix / Master</span>
+            <span class="project-card__year">—</span>
+          </div>
+          <h3 class="project-card__name">Bedroom Floor</h3>
+          <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-secondary);">Cambhy</p>
+          <div class="project-card__embed" data-youtube-url="https://www.youtube.com/watch?v=BT-D-BBEozI&list=RDBT-D-BBEozI&start_radio=1">
+            <div class="project-card__embed-frame" role="group" aria-label="YouTube embed placeholder for Bedroom Floor">
+              <span class="project-card__embed-icon" aria-hidden="true">▶</span>
+              <span class="project-card__embed-label">YouTube Embed Placeholder</span>
+            </div>
+          </div>
+          <div class="project-card__bottom-row">
+            <span class="badge">Pop</span>
+            <span class="badge">Tracking</span>
+            <span class="badge">Mixing</span>
+            <span class="badge">Mastering</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal--up" data-category="mixing" aria-label="Project: Clown Mask — tracking, mixing, mastering">
+          <div class="project-card__top-row">
+            <span class="project-card__title-mono">Tracking / Mix / Master</span>
+            <span class="project-card__year">—</span>
+          </div>
+          <h3 class="project-card__name">Clown Mask</h3>
+          <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-secondary);">4rest</p>
+          <div class="project-card__embed" data-youtube-url="https://youtu.be/8PG-VkHTd0s?si=5f-7kbuw2nGzImSF">
+            <div class="project-card__embed-frame" role="group" aria-label="YouTube embed placeholder for Clown Mask">
+              <span class="project-card__embed-icon" aria-hidden="true">▶</span>
+              <span class="project-card__embed-label">YouTube Embed Placeholder</span>
+            </div>
+          </div>
+          <div class="project-card__bottom-row">
+            <span class="badge">Punk Pop</span>
+            <span class="badge">Tracking</span>
+            <span class="badge">Mixing</span>
+            <span class="badge">Mastering</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal--up" data-category="beat-production" aria-label="Project: TELL ME — tracking, mixing, mastering, beat production">
+          <div class="project-card__top-row">
+            <span class="project-card__title-mono">Tracking / Mix / Master / Beat Production</span>
+            <span class="project-card__year">—</span>
+          </div>
+          <h3 class="project-card__name">TELL ME</h3>
+          <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-secondary);">Djinde</p>
+          <div class="project-card__embed" data-youtube-url="https://www.youtube.com/watch?v=uaeCeXBSAOw&list=RDuaeCeXBSAOw&start_radio=1">
+            <div class="project-card__embed-frame" role="group" aria-label="YouTube embed placeholder for TELL ME">
+              <span class="project-card__embed-icon" aria-hidden="true">▶</span>
+              <span class="project-card__embed-label">YouTube Embed Placeholder</span>
+            </div>
+          </div>
+          <div class="project-card__bottom-row">
+            <span class="badge">World</span>
+            <span class="badge">Tracking</span>
+            <span class="badge">Mixing</span>
+            <span class="badge">Mastering</span>
+            <span class="badge">Beat Production</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal--up" data-category="full-production" aria-label="Project: Show Time (Prelude) — tracking, mixing, mastering, vocal production">
+          <div class="project-card__top-row">
+            <span class="project-card__title-mono">Vocal Production</span>
+            <span class="project-card__year">—</span>
+          </div>
+          <h3 class="project-card__name">Show Time (Prelude)</h3>
+          <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-secondary);">Cyfye</p>
+          <div class="project-card__embed" data-youtube-url="https://www.youtube.com/watch?v=bdwxkup7JZw&list=RDbdwxkup7JZw&start_radio=1">
+            <div class="project-card__embed-frame" role="group" aria-label="YouTube embed placeholder for Show Time Prelude">
+              <span class="project-card__embed-icon" aria-hidden="true">▶</span>
+              <span class="project-card__embed-label">YouTube Embed Placeholder</span>
+            </div>
+          </div>
+          <div class="project-card__bottom-row">
+            <span class="badge">Spoken Interlude</span>
+            <span class="badge">Tracking</span>
+            <span class="badge">Mixing</span>
+            <span class="badge">Mastering</span>
+            <span class="badge">Vocal Production</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal--up" data-category="mixing" aria-label="Project: Worms — tracking, mixing, mastering">
+          <div class="project-card__top-row">
+            <span class="project-card__title-mono">Tracking / Mix / Master</span>
+            <span class="project-card__year">—</span>
+          </div>
+          <h3 class="project-card__name">Worms</h3>
+          <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-secondary);">S3mi</p>
+          <div class="project-card__embed" data-youtube-url="https://www.youtube.com/watch?v=NNjHi8hMfSQ&list=RDNNjHi8hMfSQ&start_radio=1">
+            <div class="project-card__embed-frame" role="group" aria-label="YouTube embed placeholder for Worms">
+              <span class="project-card__embed-icon" aria-hidden="true">▶</span>
+              <span class="project-card__embed-label">YouTube Embed Placeholder</span>
+            </div>
+          </div>
+          <div class="project-card__bottom-row">
+            <span class="badge">Pop</span>
+            <span class="badge">Tracking</span>
+            <span class="badge">Mixing</span>
+            <span class="badge">Mastering</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal--up" data-category="mixing" aria-label="Project: Joe Budden — tracking, mixing, mastering">
+          <div class="project-card__top-row">
+            <span class="project-card__title-mono">Tracking / Mix / Master</span>
+            <span class="project-card__year">—</span>
+          </div>
+          <h3 class="project-card__name">SKYY</h3>
+          <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-secondary);">sQueezy !</p>
+          <div class="project-card__embed" data-youtube-url="https://www.youtube.com/watch?v=qmr47amtze0&list=OLAK5uy_mx8_axF74Ww3CP3eIbiUUSiQOsk5a7Dls&index=4">
+            <div class="project-card__embed-frame" role="group" aria-label="YouTube embed placeholder for SKYY">
+              <span class="project-card__embed-icon" aria-hidden="true">▶</span>
+              <span class="project-card__embed-label">YouTube Embed Placeholder</span>
+            </div>
+          </div>
+          <div class="project-card__bottom-row">
+            <span class="badge">Hip-Hop / Rap</span>
+            <span class="badge">Tracking</span>
+            <span class="badge">Mixing</span>
+            <span class="badge">Mastering</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal--up" data-category="mixing" aria-label="Project: Can We Dance — tracking, mixing, mastering">
+          <div class="project-card__top-row">
+            <span class="project-card__title-mono">Tracking / Mix / Master</span>
+            <span class="project-card__year">—</span>
+          </div>
+          <h3 class="project-card__name">Can We Dance</h3>
+          <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-secondary);">4rest</p>
+          <div class="project-card__embed" data-youtube-url="https://youtu.be/M1wGhV6OvoA?si=-p-9b0iOsPYb4L4g">
+            <div class="project-card__embed-frame" role="group" aria-label="YouTube embed placeholder for Can We Dance">
+              <span class="project-card__embed-icon" aria-hidden="true">▶</span>
+              <span class="project-card__embed-label">YouTube Embed Placeholder</span>
+            </div>
+          </div>
+          <div class="project-card__bottom-row">
+            <span class="badge">Indie Pop</span>
+            <span class="badge">Tracking</span>
+            <span class="badge">Mixing</span>
+            <span class="badge">Mastering</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal--up" data-category="mixing" aria-label="Project: Kids Gonna Be Kids — tracking, mixing, mastering">
+          <div class="project-card__top-row">
+            <span class="project-card__title-mono">Tracking / Mix / Master</span>
+            <span class="project-card__year">—</span>
+          </div>
+          <h3 class="project-card__name">Kids Gonna Be Kids</h3>
+          <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-secondary);">S3mi</p>
+          <div class="project-card__embed" data-youtube-url="https://www.youtube.com/watch?v=ivVa-pURP94&list=RDivVa-pURP94&start_radio=1">
+            <div class="project-card__embed-frame" role="group" aria-label="YouTube embed placeholder for Kids Gonna Be Kids">
+              <span class="project-card__embed-icon" aria-hidden="true">▶</span>
+              <span class="project-card__embed-label">YouTube Embed Placeholder</span>
+            </div>
+          </div>
+          <div class="project-card__bottom-row">
+            <span class="badge">Indie Pop</span>
+            <span class="badge">Tracking</span>
+            <span class="badge">Mixing</span>
+            <span class="badge">Mastering</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal--up" data-category="mixing" aria-label="Project: Complicated — tracking, mixing, mastering">
+          <div class="project-card__top-row">
+            <span class="project-card__title-mono">Tracking / Mix / Master</span>
+            <span class="project-card__year">—</span>
+          </div>
+          <h3 class="project-card__name">Complicated</h3>
+          <p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-secondary);">Cambhy</p>
+          <div class="project-card__embed" data-youtube-url="https://www.youtube.com/watch?v=R79PnatQwzs&list=RDR79PnatQwzs&start_radio=1">
+            <div class="project-card__embed-frame" role="group" aria-label="YouTube embed placeholder for Complicated">
+              <span class="project-card__embed-icon" aria-hidden="true">▶</span>
+              <span class="project-card__embed-label">YouTube Embed Placeholder</span>
+            </div>
+          </div>
+          <div class="project-card__bottom-row">
+            <span class="badge">Pop</span>
+            <span class="badge">Tracking</span>
+            <span class="badge">Mixing</span>
+            <span class="badge">Mastering</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =============================================
+         SIGNAL CHAIN PROCESS
+    ============================================== -->
+    <section class="signal-chain" aria-labelledby="signal-heading">
+      <div class="hud-header reveal reveal--up">
+        <span class="hud-header__label">// 03 — Process</span>
+        <h2 class="hud-header__title" id="signal-heading" style="font-size: clamp(1.6rem, 4vw, 2.6rem);">SIGNAL CHAIN</h2>
+      </div>
+
+      <div class="signal-flow stagger" data-stagger-step="100" role="list" aria-label="Engineering process steps">
+
+        <div class="signal-node reveal reveal--up" role="listitem" aria-label="Step 1: Input">
+          <div class="signal-node__dot" aria-hidden="true"></div>
+          <p class="signal-node__label">Input</p>
+          <p class="signal-node__desc">Session prep starts with the artist, the record, and the goal of the performance so every technical choice serves the song.</p>
+        </div>
+
+        <div class="signal-connector" aria-hidden="true"></div>
+
+        <div class="signal-node reveal reveal--up" role="listitem" aria-label="Step 2: Tracking">
+          <div class="signal-node__dot" aria-hidden="true"></div>
+          <p class="signal-node__label">Tracking</p>
+          <p class="signal-node__desc">Tracking stays performance-focused: clean gain staging, efficient session flow, and a recording environment that helps artists stay locked in.</p>
+        </div>
+
+        <div class="signal-connector" aria-hidden="true"></div>
+
+        <div class="signal-node reveal reveal--up" role="listitem" aria-label="Step 3: Processing">
+          <div class="signal-node__dot" aria-hidden="true"></div>
+          <p class="signal-node__label">Processing</p>
+          <p class="signal-node__desc">Mixing is detail-oriented and intentional, with an emphasis on vocal presence, balance, and keeping the emotional center of the record intact.</p>
+        </div>
+
+        <div class="signal-connector" aria-hidden="true"></div>
+
+        <div class="signal-node reveal reveal--up" role="listitem" aria-label="Step 4: Output">
+          <div class="signal-node__dot" aria-hidden="true"></div>
+          <p class="signal-node__label">Output</p>
+          <p class="signal-node__desc">Final delivery is organized, client-ready, and built for repeat listening across streaming, studio, and everyday playback systems.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================
+         ARSENAL
+    ============================================== -->
+    <section class="arsenal grid-bg" aria-labelledby="arsenal-heading">
+      <div class="hud-header reveal reveal--up">
+        <span class="hud-header__label">// 04 — Tools</span>
+        <h2 class="hud-header__title" id="arsenal-heading" style="font-size: clamp(1.6rem, 4vw, 2.6rem);">ARSENAL</h2>
+      </div>
+
+      <div class="arsenal__grid stagger" data-stagger-step="80">
+
+        <div class="reveal reveal--up">
+          <p class="arsenal__col-label">Software</p>
+          <div class="arsenal__tags">
+            <span class="badge">Pro Tools</span>
+            <span class="badge">FL Studio</span>
+            <span class="badge">Logic Pro</span>
+            <span class="badge">Universal Audio</span>
+            <span class="badge">Slate Digital</span>
+            <span class="badge">Digital Audio Plugins</span>
+            <span class="badge">Session Setup</span>
+            <span class="badge">Gain Staging</span>
+          </div>
+        </div>
+
+        <div class="reveal reveal--up">
+          <p class="arsenal__col-label">Hardware</p>
+          <div class="arsenal__tags">
+            <span class="badge">Universal Audio Apollo</span>
+            <span class="badge">Universal Audio Satellite</span>
+            <span class="badge">Shure SM7b Microphones</span>
+            <span class="badge">Analog Signal Flow</span>
+            <span class="badge">Vocal Tracking</span>
+            <span class="badge">Signal Flow Troubleshooting</span>
+            <span class="badge">Condenser Microphones</span>
+          </div>
+        </div>
+
+        <div class="reveal reveal--up">
+          <p class="arsenal__col-label">Monitoring</p>
+          <div class="arsenal__tags">
+            <span class="badge">Client Communication</span>
+            <span class="badge">File Management</span>
+            <span class="badge">Workflow Adaptation</span>
+            <span class="badge">Remote Delivery</span>
+            <span class="badge">Independent Artists</span>
+            <span class="badge">Studio Sessions</span>
+            <span class="badge">Live Problem Solving</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="data-line" role="separator" aria-hidden="true"></div>
+      <div class="footer__grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:60px;margin:40px 0;">
+        <div>
+          <p class="footer__brand-name">Mitchell Gendron</p>
+          <p class="footer__tagline">Audio Engineer · Front-End Developer</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <p class="footer__nav-label">// Navigation</p>
+          <ul class="footer__nav-links" role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="audio.html">Audio Engineering</a></li>
+            <li><a href="web.html">Front-End Dev</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="footer__contact-label">// Contact</p>
+          <div class="footer__social-links">
+            <a href="mailto:mitchellgendron@gmail.com" aria-label="Send email">mitchellgendron@gmail.com</a>
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in new tab)">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Mitchell Gendron. All rights reserved.</p>
+        <div class="footer__system-status">
+          <span>[ SYSTEM STATUS: ONLINE ]</span>
+          <span class="status-dot" aria-label="System online"></span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <style>
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    /* Reuse footer styles from index */
+    .site-footer{background:var(--bg-secondary);padding:60px 60px 32px;}
+    .footer__brand-name{font-family:var(--font-display);font-weight:700;font-size:1.2rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-primary);margin-bottom:8px;}
+    .footer__tagline{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);}
+    .footer__nav-label,.footer__contact-label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;}
+    .footer__nav-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .footer__nav-links a{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);text-decoration:none;transition:color var(--transition-fast);}
+    .footer__nav-links a:hover{color:var(--accent-cyan);}
+    .footer__social-links{display:flex;flex-direction:column;gap:8px;}
+    .footer__social-links a{font-family:var(--font-mono);font-size:.75rem;color:var(--text-secondary);text-decoration:none;transition:color var(--transition-fast);}
+    .footer__social-links a:hover{color:var(--accent-cyan);}
+    .footer__bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid var(--border-subtle);}
+    .footer__copy{font-family:var(--font-mono);font-size:.65rem;color:var(--text-muted);}
+    .footer__system-status{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.65rem;color:var(--text-muted);}
+    @media(max-width:768px){.site-footer{padding:40px 20px 24px;}.footer__grid{grid-template-columns:1fr!important;gap:32px!important;}}
+  </style>
+
+  <script src="js/main.js"></script>
+  <script src="js/audio-page.js"></script>
+</body>
+</html>

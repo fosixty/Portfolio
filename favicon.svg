@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- Dark background -->
+  <rect width="256" height="256" fill="#0a0e27"/>
+  
+  <!-- Circuit board / chip design -->
+  <g stroke="#00ff88" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Center hexagon -->
+    <path d="M 128 70 L 180 100 L 180 160 L 128 190 L 76 160 L 76 100 Z"/>
+    
+    <!-- Connection points -->
+    <circle cx="128" cy="70" r="8" fill="#00ff88"/>
+    <circle cx="180" cy="100" r="8" fill="#00ff88"/>
+    <circle cx="180" cy="160" r="8" fill="#00ff88"/>
+    <circle cx="128" cy="190" r="8" fill="#00ff88"/>
+    <circle cx="76" cy="160" r="8" fill="#00ff88"/>
+    <circle cx="76" cy="100" r="8" fill="#00ff88"/>
+  </g>
+</svg>

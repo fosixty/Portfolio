@@ -1,0 +1,460 @@
+/* ============================================================
+   audio.css — Audio Engineering page layout
+   ============================================================ */
+
+main { padding-top: 60px; }
+
+/* ----------------------------------------------------------
+   Page Hero
+   ---------------------------------------------------------- */
+.audio-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  min-height: 420px;
+  padding: 80px 60px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.audio-hero__title-block { display: flex; flex-direction: column; gap: 20px; }
+
+.audio-hero__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+}
+
+/* Frequency Spectrum SVG */
+.audio-hero__spectrum {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 160px;
+  padding: 0 8px;
+  justify-content: center;
+}
+
+.spectrum-bar {
+  width: 5px;
+  border-radius: 1px 1px 0 0;
+  background: var(--accent-cyan);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.spectrum-bar.animate {
+  transform: scaleY(1);
+}
+
+/* ----------------------------------------------------------
+   Filter Bar
+   ---------------------------------------------------------- */
+.filter-bar {
+  padding: 24px 60px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-bar__label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-right: 8px;
+}
+
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid var(--border-mid);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+  min-height: 44px;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.filter-btn.active {
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  color: var(--bg-primary);
+}
+
+/* ----------------------------------------------------------
+   Project Grid
+   ---------------------------------------------------------- */
+.project-section {
+  padding: 60px;
+  background: var(--bg-primary);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+/* Wide cards span 2 columns */
+.project-card--wide { grid-column: span 2; }
+
+.project-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-mid);
+  border-left: 3px solid var(--accent-cyan);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition:
+    background var(--transition-fast),
+    border-left-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  position: relative;
+}
+
+.project-card:hover {
+  background: var(--bg-elevated);
+  box-shadow: inset 3px 0 12px rgba(0, 200, 224, 0.08);
+}
+
+.project-card__top-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.project-card__title-mono {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.project-card:hover .project-card__title-mono { color: var(--accent-cyan); }
+
+.project-card__year {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+.project-card__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.project-card:hover .project-card__name { color: var(--accent-cyan); }
+
+.project-card__embed {
+  margin-top: 6px;
+}
+
+.project-card__embed-frame {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border: 1px dashed var(--border-mid);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(to bottom right, rgba(0, 200, 224, 0.08), rgba(0, 255, 153, 0.04)),
+    var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 10px;
+}
+
+.project-card__embed-frame--active {
+  padding: 0;
+  overflow: hidden;
+  border-style: solid;
+}
+
+.project-card__embed-frame--ready {
+  padding: 0;
+  overflow: hidden;
+}
+
+.project-card__embed-trigger {
+  all: unset;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.project-card__embed-trigger:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: -2px;
+}
+
+.project-card__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.88) contrast(1.06);
+  transition: transform var(--transition-med), filter var(--transition-med);
+}
+
+.project-card__embed-trigger:hover .project-card__thumb,
+.project-card__embed-trigger:focus-visible .project-card__thumb {
+  transform: scale(1.02);
+  filter: saturate(1) contrast(1.12);
+}
+
+.project-card__play-badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-cyan);
+  background: rgba(2, 6, 20, 0.72);
+  color: var(--accent-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.project-card__iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.project-card__embed-icon {
+  width: 36px;
+  height: 26px;
+  border: 1px solid var(--accent-cyan);
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-cyan);
+  font-size: 0.8rem;
+  box-shadow: var(--glow-cyan);
+}
+
+.project-card__embed-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.project-card__bottom-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+/* Filter hide state */
+.project-card[data-hidden="true"] {
+  opacity: 0.15;
+  pointer-events: none;
+  transition: opacity var(--transition-med);
+}
+
+/* ----------------------------------------------------------
+   Signal Chain Section
+   ---------------------------------------------------------- */
+.signal-chain {
+  padding: 100px 60px;
+  background: var(--bg-secondary);
+}
+
+.signal-flow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 60px;
+  position: relative;
+}
+
+.signal-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.signal-node__dot {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--accent-cyan);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface);
+  position: relative;
+  z-index: 1;
+}
+
+.signal-node__dot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.signal-node__label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+.signal-node__desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 160px;
+  line-height: 1.6;
+}
+
+/* Connecting lines between nodes */
+.signal-connector {
+  flex: 0 0 40px;
+  height: 1px;
+  background: var(--border-mid);
+  position: relative;
+  overflow: hidden;
+  align-self: center;
+  margin-bottom: 64px; /* align with dots */
+}
+
+.signal-connector::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, var(--accent-cyan), transparent);
+  animation: signal-travel 2.4s linear infinite;
+}
+
+@keyframes signal-travel {
+  0%   { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* ----------------------------------------------------------
+   Arsenal Section
+   ---------------------------------------------------------- */
+.arsenal {
+  padding: 100px 60px;
+  background: var(--bg-primary);
+}
+
+.arsenal__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.arsenal__col-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.arsenal__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ----------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .audio-hero { grid-template-columns: 1fr; padding: 60px 40px; }
+  .audio-hero__spectrum { display: none; }
+  .project-section { padding: 60px 40px; }
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-card--wide { grid-column: span 1; }
+  .signal-chain { padding: 80px 40px; }
+  .arsenal { padding: 80px 40px; }
+  .arsenal__grid { grid-template-columns: 1fr; gap: 32px; }
+  .filter-bar { padding: 20px 40px; }
+}
+
+@media (max-width: 768px) {
+  .audio-hero { padding: 40px 20px; }
+  .project-section { padding: 40px 20px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .signal-flow {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .signal-connector {
+    width: 1px;
+    height: 32px;
+    flex: 0 0 32px;
+    margin-bottom: 0;
+    margin-right: 60px;
+  }
+  @keyframes signal-travel {
+    0%   { top: -100%; left: 0; }
+    100% { top: 100%; left: 0; }
+  }
+  .signal-connector::after {
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--accent-cyan), transparent);
+  }
+  .arsenal { padding: 60px 20px; }
+  .filter-bar { padding: 16px 20px; }
+}
