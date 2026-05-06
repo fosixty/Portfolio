@@ -11,7 +11,7 @@ const initTerminal = () => {
     { type: 'cmd',    text: 'whoami' },
     { type: 'out',    text: 'software developer · audio engineer' },
     { type: 'cmd',    text: 'ls ./skills' },
-    { type: 'out',    text: 'HTML · CSS · JavaScript\n · Git · VS Code\n · AI-assisted workflows' },
+    { type: 'out',    text: 'HTML · CSS · JavaScript\n · Git · VS Code · Cursor Agent\n · AI-assisted workflows' },
     { type: 'cmd',    text: 'cat about.txt' },
     { type: 'out',    text: 'Building precise interfaces through implementation, debugging, and iteration.' },
   ];
