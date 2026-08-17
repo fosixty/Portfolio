@@ -127,6 +127,19 @@ main { padding-top: 60px; }
   transform-style: preserve-3d;
 }
 
+.dev-card--featured {
+  grid-column: 1 / -1;
+  padding: 36px;
+}
+
+.dev-card--featured .dev-card__name {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.dev-card--featured .dev-card__desc {
+  max-width: 900px;
+}
+
 .dev-card__name {
   font-family: var(--font-display);
   font-weight: 700;
@@ -326,6 +339,7 @@ main { padding-top: 60px; }
   .web-hero { padding: 40px 20px; }
   .projects-section { padding: 60px 20px; }
   .projects-grid { grid-template-columns: 1fr; }
+  .dev-card--featured { padding: 28px; }
   .capabilities { padding: 60px 20px; }
   .cap-row { grid-template-columns: 1fr; }
   .cap-cell--bar-wrap,
